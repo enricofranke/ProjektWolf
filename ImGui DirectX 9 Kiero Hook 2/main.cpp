@@ -41,7 +41,7 @@ long __stdcall hkEndScene(LPDIRECT3DDEVICE9 pDevice)
 {
 	if (!init)
 	{
-		gameModule = (DWORD)GetModuleHandle("client.sll");
+		gameModule = (DWORD)GetModuleHandle("client.dll");
 		InitImGui(pDevice);
 		init = true;
 	}
@@ -60,7 +60,7 @@ long __stdcall hkEndScene(LPDIRECT3DDEVICE9 pDevice)
 	//showes the Overlay or Hide
 	if (show) {
 		//get Propertys 
-		//uintptr_t LocalPlayer = RPM<uintptr_t>(gameModule + dwLocalPlayer);
+		uintptr_t LocalPlayer = RPM<uintptr_t>(gameModule + signatures::dwLocalPlayer);
 
 
 		ImGui_ImplDX9_NewFrame();
@@ -71,9 +71,12 @@ long __stdcall hkEndScene(LPDIRECT3DDEVICE9 pDevice)
 		ImGui::Begin("Einstellungen");
 
 		//new Slider for FOV min 180 max 180
-		ImGui::SliderInt("FOV Settings", &fov, -180, 180);
-		//WPM<int>(LocalPlayer + m_iDefualtFOV, fov);
+		if (!RPM<uintptr_t>(gameModule + custom::m_iDefualtFOV) == NULL) {
 
+			ImGui::SliderInt("FOV Settings", &fov, -180, 180);
+			WPM<int>(LocalPlayer + custom::m_iDefualtFOV, fov);
+		}
+		else ImGui::Text("FOV Settings Only In Game");
 
 		ImGui::End();
 
