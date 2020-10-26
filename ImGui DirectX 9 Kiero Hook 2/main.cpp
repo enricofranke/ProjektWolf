@@ -156,11 +156,13 @@ long __stdcall hkEndScene(LPDIRECT3DDEVICE9 pDevice)
 			break;
 
 		case 1:
+			ImGui::BeginChild("child", ImVec2(100, 0), true);
 
 			ImGui::Checkbox("WallHack", &WallsOn);
 			ImGui::SameLine();
 			ImGui::Text("TODO ADD KEYBIND TOOL");
 			ImGui::Text("TODO ADD COLOR CHANGER");
+			ImGui::EndChild();
 			break;
 
 		case 2:
@@ -168,11 +170,10 @@ long __stdcall hkEndScene(LPDIRECT3DDEVICE9 pDevice)
 			break;
 		}
 
-		ImGui::BeginGroup();
 
 		ImGui::SliderInt("FOV Settings", &fov, 10, 150);
 
-		ImGui::EndGroup();
+		
 
 		ImGui::Text("Test");
 
