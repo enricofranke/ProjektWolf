@@ -34,3 +34,11 @@
 .vs/ImGui DirectX 9 Kiero Hook 2/v16/
 
 .vs
+
+*.log
+
+*.tlog
+
+*.pdb
+
+*.lastbuildstate
