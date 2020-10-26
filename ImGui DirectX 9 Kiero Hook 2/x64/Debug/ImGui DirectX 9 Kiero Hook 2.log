@@ -1,12 +1,2 @@
-﻿  imgui.cpp
-  imgui_demo.cpp
-  imgui_draw.cpp
-  imgui_impl_dx9.cpp
-  imgui_impl_win32.cpp
-  imgui_widgets.cpp
-  kiero.cpp
-  main.cpp
-D:\Programmieren\csgoHack\ProjektWolf\ImGui DirectX 9 Kiero Hook 2\main.cpp(44,52): warning C4311: "Typumwandlung": Zeigerverkürzung von "HMODULE" zu "DWORD"
-D:\Programmieren\csgoHack\ProjektWolf\ImGui DirectX 9 Kiero Hook 2\main.cpp(44,52): warning C4302: "Typumwandlung": Verkürzung von "HMODULE" in "DWORD"
-D:\Programmieren\csgoHack\ProjektWolf\ImGui DirectX 9 Kiero Hook 2\main.cpp(126,49): error C2065: "GWL_WNDPROC": nichtdeklarierter Bezeichner
-  Code wird generiert...
+﻿  main.cpp
+D:\Programmieren\csgoHack\ProjektWolf\ImGui DirectX 9 Kiero Hook 2\main.cpp(229,49): error C2065: "GWL_WNDPROC": nichtdeklarierter Bezeichner
