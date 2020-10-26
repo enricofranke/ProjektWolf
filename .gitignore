@@ -31,5 +31,12 @@
 *.out
 *.app
 
+.vs/ImGui DirectX 9 Kiero Hook 2/v16/
+
+ImGui DirectX 9 Kiero Hook 2/x64/Debug/
+
+ImGui DirectX 9 Kiero Hook 2/Debug/
+
 Debug/
+
 .vs
