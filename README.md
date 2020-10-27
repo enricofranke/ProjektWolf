@@ -8,7 +8,7 @@
 
 <br />
 
-### Things that are still being implemented:
+### Roadmap:
 
 - Skin Changer
 - AimBot
