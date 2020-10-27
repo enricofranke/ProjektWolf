@@ -58,8 +58,8 @@ static bool aimBot = false;
 long __stdcall hkEndScene(LPDIRECT3DDEVICE9 pDevice)
 {
 	if (!init) {
-		gameModule = (DWORD)(GetModuleHandle("client.dll"));
-		engineModule = (DWORD)(GetModuleHandle("engine.dll"));
+		gameModule = static_cast<DWORD>(GetModuleHandle("client.dll"));
+		engineModule = static_cast<DWORD>(GetModuleHandle("engine.dll"));
 		InitImGui(pDevice);
 		ImGui::SetNextWindowPos(ImVec2(650, 200));
 
@@ -91,7 +91,7 @@ long __stdcall hkEndScene(LPDIRECT3DDEVICE9 pDevice)
 
 	if (WallsOn) {
 	
-		if (LocalPlayer != NULL && GlowObjectManager != NULL && EntityList != NULL) {
+		if (LocalPlayer != 0 && GlowObjectManager != 0 && EntityList != 0) {
 
 			int myTeamNum = *reinterpret_cast<int*>(LocalPlayer + netvars::m_iTeamNum);
 			//The number of Players that are going to be checked with Team
@@ -193,16 +193,16 @@ LRESULT __stdcall WndProc(const HWND hWnd, UINT uMsg, WPARAM wParam, LPARAM lPar
 	return CallWindowProc(oWndProc, hWnd, uMsg, wParam, lParam);
 }
 
-BOOL CALLBACK EnumWindowsCallback(HWND handle, LPARAM lParam)
+bool CALLBACK EnumWindowsCallback(HWND handle, LPARAM lParam)
 {
 	DWORD wndProcId;
 	GetWindowThreadProcessId(handle, &wndProcId);
 
 	if (GetCurrentProcessId() != wndProcId)
-		return TRUE; // skip to next window
+		return true; // skip to next window
 
 	window = handle;
-	return FALSE; // window found abort search
+	return false; // window found abort search
 }
 
 HWND GetProcessWindow()
@@ -227,10 +227,10 @@ DWORD WINAPI MainThread(LPVOID lpReserved)
 			attached = true;
 		}
 	} while (!attached);
-	return TRUE;
+	return true;
 }
 
-BOOL WINAPI DllMain(HMODULE hMod, DWORD dwReason, LPVOID lpReserved)
+bool WINAPI DllMain(HMODULE hMod, DWORD dwReason, LPVOID lpReserved)
 {
 	switch (dwReason)
 	{
@@ -242,7 +242,7 @@ BOOL WINAPI DllMain(HMODULE hMod, DWORD dwReason, LPVOID lpReserved)
 		kiero::shutdown();
 		break;
 	}
-	return TRUE;
+	return true;
 }
 
 
