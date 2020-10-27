@@ -4,7 +4,7 @@
 - 🌱  Developed in C++ 
 - 👯 Current development phase: in work
 - 🥅 2020 Goals: Make it VAC Secure
-- ⚡ Vac secure: FALSE (Only with Steam By Pass)
+- ⚡ Vac secure: FALSE (Only with [Steam Bypass](https://github.com/danielkrupinski/VAC-Bypass))
 
 <br />
 
@@ -17,7 +17,16 @@
 - and more ...
 
 <br />
-<br />
+
+---
+
+## [1.0] - 2020-10-27
+
+### Added
+
+- Simple Charms
+- [ImGui](https://github.com/ocornut/imgui)
+- KiroHook: To be able to use a visual hook 
 
 ---
 
