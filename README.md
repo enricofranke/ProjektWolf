@@ -4,7 +4,7 @@
 - 🌱  Developed in C++ 
 - 👯 Current development phase: in work
 - 🥅 2020 Goals: Make it VAC Secure
-- ⚡ VAC secure: - ![#f03c15](https://via.placeholder.com/15/f03c15/000000?text=+) `#f03c15` (Only with [Steam Bypass](https://github.com/danielkrupinski/VAC-Bypass))
+- ⚡ VAC secure: -FALSE (Only with [Steam Bypass](https://github.com/danielkrupinski/VAC-Bypass))
 
 <br />
 
