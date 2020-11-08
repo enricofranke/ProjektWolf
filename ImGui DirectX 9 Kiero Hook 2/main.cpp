@@ -54,6 +54,7 @@ static int switchTabs = 3;
 static int fov = 90;
 static bool WallsOn = false;
 static bool aimBot = false;
+static float color;
 
 long __stdcall hkEndScene(LPDIRECT3DDEVICE9 pDevice)
 {
@@ -132,14 +133,16 @@ long __stdcall hkEndScene(LPDIRECT3DDEVICE9 pDevice)
 
 	//showes the Overlay or Hide
 	if (show) {
-
 		ImGui_ImplDX9_NewFrame();	
 		ImGui_ImplWin32_NewFrame();
+		ImGuiIO io = ImGui::GetIO();
 		ImGui::NewFrame();
 
 		//begin new Overlay Window
 		// TODO check boolean
-		ImGui::Begin("Projekt Wolf");
+		ImGui::SetNextWindowSize(ImVec2(650.f, 450.f));
+		ImGui::SetNextWindowPos(ImVec2(io.DisplaySize.x * 0.5f, io.DisplaySize.y * 0.5f), ImGuiCond_Always, ImVec2(0.5f, 0.5f));
+		ImGui::Begin("Projekt Wolf", nullptr,  ImGuiWindowFlags_NoCollapse);
 
 		if (ImGui::Button("Aimbot", ImVec2(100.0f, 0.0f)))
 			switchTabs = 0;
@@ -156,13 +159,10 @@ long __stdcall hkEndScene(LPDIRECT3DDEVICE9 pDevice)
 			break;
 
 		case 1:
-			ImGui::BeginChild("child", ImVec2(100, 0), true);
-
 			ImGui::Checkbox("WallHack", &WallsOn);
 			ImGui::SameLine();
 			ImGui::Text("TODO ADD KEYBIND TOOL");
-			ImGui::Text("TODO ADD COLOR CHANGER");
-			ImGui::EndChild();
+			ImGui::ColorPicker4("##picker", (float*)&color, ImGuiColorEditFlags_NoSidePreview | ImGuiColorEditFlags_NoSmallPreview);
 			break;
 
 		case 2:

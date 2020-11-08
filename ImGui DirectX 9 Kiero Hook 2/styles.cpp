@@ -8,7 +8,7 @@ void loadStyle() {
 	style->WindowRounding = 5.0f;
 	style->FramePadding = ImVec2(5, 5);
 	style->FrameRounding = 4.0f;
-	style->ItemSpacing = ImVec2(12, 8);
+	style->ItemSpacing = ImVec2(12, 20); //i Changed That to make Buttons Bigger LOL 
 	style->ItemInnerSpacing = ImVec2(8, 6);
 	style->IndentSpacing = 25.0f;
 	style->ScrollbarSize = 15.0f;
