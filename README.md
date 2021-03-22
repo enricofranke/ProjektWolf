@@ -5,6 +5,7 @@
 - 👯 Current development phase: in work
 - 🥅 2020 Goals: Make it VAC Secure
 - ⚡ VAC secure: ``` FALSE ```(Only with [Steam Bypass](https://github.com/danielkrupinski/VAC-Bypass))
+- NOT WORKING DO TO PATCH FROM CSGO
 
 <br />
 
