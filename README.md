@@ -1,4 +1,5 @@
 ### This is Projekt Wolf The Cheat Software !
+-❌ this project is no longer being developed ❌
 
 - 🔭 Development hours: 15 H
 - 🌱  Developed in C++ 
